@@ -1,0 +1,24 @@
+<?php
+
+class Counter extends businessObject {
+  
+  public function __construct() {
+    parent::__construct();
+    $this->setObjectTable();
+  }
+
+  protected function setObjectTable() {
+    $this->obj_table = $this->dbase->prefix."pc_stats";
+  }
+  
+  public function __destruct() {}
+   
+}
+
+function show_counter() {
+  $counter = new Counter();
+  echo '<div id="pc-counter-tel">'.get_option('pc_hidden_phone_number').'</div>';
+  
+}
+
+?>

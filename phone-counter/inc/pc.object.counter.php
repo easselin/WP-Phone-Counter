@@ -16,8 +16,14 @@ class Counter extends businessObject {
 }
 
 function show_counter() {
+
   $counter = new Counter();
-  echo '<div id="pc-counter-tel">'.get_option('pc_hidden_phone_number').'</div>';
+  echo '
+    <script type="text/javascript">
+      document.write(\'<div id="pc-counter-tel">'.get_option('pc_hidden_phone_number').'</div>\');
+    </script>
+    <noscript><div id="pc-counter-tel">'.get_option('pc_real_phone_number').'</div></noscript>
+  ';
   
 }
 

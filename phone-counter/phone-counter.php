@@ -3,7 +3,7 @@
 Plugin Name: Phone Counter
 Plugin URI: http://www.ericasselin.com
 Description: Keep track of click on phone number
-Version: 0.1
+Version: 0.1.2
 Author: Eric Asselin
 Author URI: http://www.ericasselin.com
 */

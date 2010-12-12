@@ -7,14 +7,17 @@ function pc_counter_js() {
   $link = get_bloginfo('url');
   echo "
     <script type=\"text/javascript\">
-    $('#pc-counter-tel').click(function() {
+    $('.pc-counter').click(function() {
+      sender = $(this);
+      senderId = this.id;
+      alert(this.id);
     	$.ajax({
     	  type: 'POST',
     	  url: '{$link}/wp-admin/admin-ajax.php',
-    	  data: { action: 'pcupdate', _ajax_nonce: '{$nonce}', url:'{$_SERVER["REQUEST_URI"]}' },
+    	  data: { action: 'pcupdate', _ajax_nonce: '{$nonce}', url:'{$_SERVER["REQUEST_URI"]}#'+senderId },
     	  dataType: 'html',
     	  success: function(html, textStatus) {
-    	    $('#pc-counter-tel').html(html);
+    	    sender.html(html);
     	  },
     	  error: function(xhr, textStatus, errorThrown) {
     	    alert(errorThrown);

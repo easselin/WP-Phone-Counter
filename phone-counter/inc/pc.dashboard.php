@@ -53,10 +53,13 @@ function pc_dashboard_settings_function() {
   
   $hiddenPhoneNumber = get_option('pc_hidden_phone_number');
   $realPhoneNumber = get_option('pc_real_phone_number');;
+  echo '<table><tr><td style="width:50%;padding-right:30px;">';
   echo '<p><label for="hidden-phone-number">' . __('Hidden Phone Number: ') . '</label>';
   echo '<input id="hidden-phone-number" name="pc_hidden_phone_number" type="text" value="' . $hiddenPhoneNumber . '" size="15" /></p>';
+  echo '</td><td>';
   echo '<p><label for="real-phone-number">' . __('Real Phone Number: ') . '</label>';
   echo '<input id="real-phone-number" name="pc_real_phone_number" type="text" value="' . $realPhoneNumber . '" size="15" /></p>';
+  echo '</td></tr></table>';
 }
 
 // Create the function use in the action hook

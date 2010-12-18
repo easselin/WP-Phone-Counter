@@ -1,5 +1,8 @@
 <?php
 
+if( !defined('__BUSINESSOBJECT') ) {
+  define( '__BUSINESSOBJECT' , 1 );
+
 abstract class businessObject {
   
   protected $obj_table;
@@ -10,7 +13,7 @@ abstract class businessObject {
     $this->dbase = $wpdb;
   }
   
-  public function getById($id) {    
+  public function getById($id) {
     $id = (int)$id;
     return $this->dbase->get_row("SELECT {$this->obj_table}.*
                         FROM {$this->obj_table}
@@ -101,11 +104,18 @@ abstract class businessObject {
     return $state;
   }
   
+  public function getObjectTable() {
+    return $this->obj_table;
+  }
+  
   abstract protected function setObjectTable();
   
   public function __destruct() {}
   
   
 }
+
+} // end define test
+
 
 ?>

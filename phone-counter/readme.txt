@@ -12,3 +12,4 @@ to style, phone-counter/css/pc.css
 
 18/12/2010
         - no conflict version of businessObject class
+        - no conflict version of functions.plugins.php

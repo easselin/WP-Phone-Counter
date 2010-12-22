@@ -10,7 +10,6 @@ function pc_counter_js() {
     $('.pc-counter').click(function() {
       sender = $(this);
       senderId = this.id;
-      alert(this.id);
     	$.ajax({
     	  type: 'POST',
     	  url: '{$link}/wp-admin/admin-ajax.php',
